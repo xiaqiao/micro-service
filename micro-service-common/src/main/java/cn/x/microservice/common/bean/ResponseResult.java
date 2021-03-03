@@ -13,12 +13,12 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ResponseResult<T> implements Serializable {
+public class ResponseResult<E> implements Serializable {
 
     private static final long serialVersionUID = 8463545112277030013L;
     private Integer code = 0;
     private String message = "success";
-    private T data;
+    private Object data;
 
     public static ResponseResult success(Object data) {
         return new ResponseResult<>(0, "success", data);
