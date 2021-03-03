@@ -6,7 +6,7 @@ spring:
       username: admin
       password: admin
       config:
-        server-addr: 47.100.120.80:8040
+        server-addr: localhost:8848
         file-extension: yaml
         namespace: b8a92bda-8d25-4ab9-834a-3700e47f8c57
         group: MICROSERVICE-GROUP
