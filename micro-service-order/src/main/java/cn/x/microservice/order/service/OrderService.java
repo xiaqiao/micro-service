@@ -1,6 +1,9 @@
 package cn.x.microservice.order.service;
 
 import cn.x.microservice.common.bean.PageResponseResult;
+import cn.x.microservice.order.entity.OrderInfo;
+
+import java.util.List;
 
 /**
  * @author xqa
@@ -8,6 +11,6 @@ import cn.x.microservice.common.bean.PageResponseResult;
  */
 public interface OrderService {
 
-    PageResponseResult getUserOrderList(Long userId, Integer page, Integer rows);
+    PageResponseResult<List<OrderInfo>> getUserOrderList(Long userId, Integer page, Integer rows);
 
 }

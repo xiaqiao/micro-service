@@ -9,6 +9,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author xqa
  * @since 2021/3/3
@@ -20,11 +22,11 @@ public class OrderServiceImpl implements OrderService {
     private OrderInfoMapper orderInfoMapper;
 
     @Override
-    public PageResponseResult getUserOrderList(Long userId, Integer page, Integer rows) {
+    public PageResponseResult<List<OrderInfo>> getUserOrderList(Long userId, Integer page, Integer rows) {
         Page<OrderInfo> pageInfo = new Page<>(page, rows);
         QueryWrapper<OrderInfo> orderWrapper = new QueryWrapper<>();
         orderWrapper.eq("user_id", userId);
         orderInfoMapper.selectPage(pageInfo, orderWrapper);
-        return PageResponseResult.success(pageInfo.getRecords(), pageInfo.getTotal());
+        return new PageResponseResult<>(pageInfo.getRecords(), pageInfo.getTotal());
     }
 }

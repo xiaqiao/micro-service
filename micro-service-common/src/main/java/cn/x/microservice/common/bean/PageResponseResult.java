@@ -17,27 +17,28 @@ public class PageResponseResult<E> extends ResponseResult<E> {
 
     private Integer code = 0;
     private String message = "success";
-    private Object data;
+    private E data;
     private long total;
 
-    public static PageResponseResult success(Object data, Long total) {
-        return new PageResponseResult(0, "success", data, total);
+    public PageResponseResult(E data, Long total) {
+        this.data = data;
+        this.total = total;
     }
 
     public static PageResponseResult paramError() {
-        return new PageResponseResult(101, "failed: param error", null, 0);
+        return new PageResponseResult<>(101, "failed: param error", null, 0);
     }
 
     public static PageResponseResult flowLimit() {
-        return new PageResponseResult(102, "failed: flow limit", null, 0);
+        return new PageResponseResult<>(102, "failed: flow limit", null, 0);
     }
 
     public static PageResponseResult sysError() {
-        return new PageResponseResult(500, "failed: sys error", null, 0);
+        return new PageResponseResult<>(500, "failed: sys error", null, 0);
     }
 
     public static PageResponseResult forbidError() {
-        return new PageResponseResult(1001, "failed: forbid error", null, 0);
+        return new PageResponseResult<>(1001, "failed: forbid error", null, 0);
     }
 
 }

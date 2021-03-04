@@ -22,7 +22,7 @@ public class OrderController {
 
     @GetMapping("/user")
     public ResponseResult userOrderList(Long userId, Integer page, Integer rows) {
-        return ResponseResult.success(orderService.getUserOrderList(userId, page, rows));
+        return new ResponseResult<>(orderService.getUserOrderList(userId, page, rows));
     }
 
 }
