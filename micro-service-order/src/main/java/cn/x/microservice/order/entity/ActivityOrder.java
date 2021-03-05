@@ -3,8 +3,6 @@ package cn.x.microservice.order.entity;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,10 +16,10 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class DailyOrder implements Serializable {
+public class ActivityOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @TableId
+
     private Long orderId;
 
     private Long orderNo;
@@ -39,6 +37,8 @@ public class DailyOrder implements Serializable {
     private Integer state;
 
     private Integer userId;
+
+    private Integer activityId;
 
     private LocalDateTime cTime;
 

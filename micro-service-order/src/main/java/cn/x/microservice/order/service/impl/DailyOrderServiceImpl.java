@@ -26,7 +26,8 @@ public class DailyOrderServiceImpl extends ServiceImpl<DailyOrderMapper, DailyOr
     public PageResponseResult<List<DailyOrder>> getUserOrderList(Long userId, Integer page, Integer rows) {
         Page<DailyOrder> pageInfo = new Page<>(page, rows);
         QueryWrapper<DailyOrder> dailyOrderQueryWrapper = new QueryWrapper<>();
-        dailyOrderQueryWrapper.eq("user_id", userId);
+        dailyOrderQueryWrapper.eq("user_id", userId)
+                .orderByDesc("c_time");
         baseMapper.selectPage(pageInfo, dailyOrderQueryWrapper);
         return new PageResponseResult<>(pageInfo.getRecords(), pageInfo.getTotal());
     }

@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: microservice-gateway
+  cloud:
+    nacos:
+      username: admin
+      password: admin
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        namespace: b8a92bda-8d25-4ab9-834a-3700e47f8c57
+        group: MICROSERVICE-GROUP
