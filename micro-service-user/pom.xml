@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>micro-service-order</artifactId>
+    <artifactId>micro-service-user</artifactId>
 
     <dependencies>
         <dependency>
@@ -49,52 +49,5 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-version}</version>
         </dependency>
-
     </dependencies>
-
-
-    <build>
-        <!--suppress UnresolvedMavenProperty -->
-        <finalName>${project.artifactId}-${build.time}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>timestamp-property</id>
-                        <goals>
-                            <goal>timestamp-property</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <name>build.time</name>
-                    <pattern>yyyyMMddHHmm</pattern>
-                    <timeZone>GMT+8</timeZone>
-                    <source/>
-                    <regex/>
-                    <value/>
-                    <fileSet/>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>cn.x.microservice.order.OrderApplication</mainClass>
-                    <fork>true</fork>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
