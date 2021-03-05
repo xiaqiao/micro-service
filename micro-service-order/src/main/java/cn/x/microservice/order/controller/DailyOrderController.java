@@ -1,28 +1,31 @@
 package cn.x.microservice.order.controller;
 
+
 import cn.x.microservice.common.bean.ResponseResult;
-import cn.x.microservice.order.service.OrderService;
-import lombok.extern.slf4j.Slf4j;
+import cn.x.microservice.order.service.DailyOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author xqa
- * @since 2021/3/3
+ * <p>
+ * 前端控制器
+ * </p>
+ *
+ * @author x
+ * @since 2021-03-05
  */
 @RestController
-@RequestMapping("/order")
-@Slf4j
-public class OrderController {
+@RequestMapping("/order/daily-order")
+public class DailyOrderController {
 
     @Autowired
-    private OrderService orderService;
+    private DailyOrderService dailyOrderService;
 
     @GetMapping("/user")
     public ResponseResult userOrderList(Long userId, Integer page, Integer rows) {
-        return new ResponseResult<>(orderService.getUserOrderList(userId, page, rows));
+        return new ResponseResult<>(dailyOrderService.getUserOrderList(userId, page, rows));
     }
 
 }

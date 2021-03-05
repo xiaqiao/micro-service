@@ -26,9 +26,7 @@ public class CodeGenerator {
      */
     public static String scanner(String tip) {
         Scanner scanner = new Scanner(System.in);
-        StringBuilder help = new StringBuilder();
-        help.append("请输入" + tip + "：");
-        System.out.println(help.toString());
+        System.out.println("请输入" + tip + "：");
         if (scanner.hasNext()) {
             String ipt = scanner.next();
             if (StringUtils.isNotBlank(ipt)) {
@@ -44,10 +42,11 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = System.getProperty("user.dir");
+        String projectPath = System.getProperty("user.dir") + "/" + scanner("模块文件夹");
         gc.setOutputDir(projectPath + "/src/main/java");
         gc.setAuthor("x");
         gc.setOpen(false);
+        gc.setServiceName("%sService");
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
@@ -62,7 +61,7 @@ public class CodeGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-//        pc.setParent("cn.x.microservice");
+        pc.setParent("cn.x.microservice");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -74,9 +73,9 @@ public class CodeGenerator {
         };
 
         // 如果模板引擎是 freemarker
-//        String templatePath = "/templates/mapper.xml.ftl";
+        String templatePath = "/templates/mapper.xml.ftl";
         // 如果模板引擎是 velocity
-        String templatePath = "/templates/mapper.xml.vm";
+//        String templatePath = "/templates/mapper.xml.vm";
 
         // 自定义输出配置
         List<FileOutConfig> focList = new ArrayList<>();
@@ -85,8 +84,7 @@ public class CodeGenerator {
             @Override
             public String outputFile(TableInfo tableInfo) {
                 // 自定义输出文件名 ， 如果你 Entity 设置了前后缀、此处注意 xml 的名称会跟着发生变化！！
-                return projectPath + "/src/main/resources/mapper/" + pc.getModuleName()
-                        + "/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
+                return projectPath + "/src/main/resources/mapper/" + tableInfo.getEntityName() + "Mapper" + StringPool.DOT_XML;
             }
         });
         /*
@@ -129,7 +127,7 @@ public class CodeGenerator {
         // 公共父类
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
-        strategy.setSuperEntityColumns("id");
+//        strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
