@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author x
@@ -17,4 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AppUserServiceImpl extends ServiceImpl<AppUserMapper, AppUser> implements AppUserService {
 
+    @Override
+    public AppUser getUserInfo(Integer id) {
+        return baseMapper.selectById(id);
+    }
 }

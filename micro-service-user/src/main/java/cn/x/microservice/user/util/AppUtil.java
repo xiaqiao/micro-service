@@ -1,4 +1,4 @@
-package cn.x.microservice.user.config;
+package cn.x.microservice.user.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;

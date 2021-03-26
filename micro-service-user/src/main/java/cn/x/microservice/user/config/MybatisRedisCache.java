@@ -1,6 +1,6 @@
-package cn.x.microservice.order.config;
+package cn.x.microservice.user.config;
 
-import cn.x.microservice.order.util.AppUtil;
+import cn.x.microservice.user.util.AppUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.cache.Cache;
 import org.springframework.data.redis.connection.RedisServerCommands;

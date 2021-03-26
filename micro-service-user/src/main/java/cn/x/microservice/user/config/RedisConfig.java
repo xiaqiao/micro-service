@@ -1,4 +1,4 @@
-package cn.x.microservice.order.config;
+package cn.x.microservice.user.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

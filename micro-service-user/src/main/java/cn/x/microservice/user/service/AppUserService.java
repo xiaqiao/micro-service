@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface AppUserService extends IService<AppUser> {
 
+    AppUser getUserInfo(Integer id);
 }

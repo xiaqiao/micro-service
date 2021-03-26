@@ -1,4 +1,4 @@
-package cn.x.microservice.order.config;
+package cn.x.microservice.order.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
