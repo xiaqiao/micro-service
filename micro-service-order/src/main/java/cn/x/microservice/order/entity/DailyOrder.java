@@ -1,27 +1,24 @@
 package cn.x.microservice.order.entity;
 
+import lombok.Data;
+
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author x
  * @since 2021-03-05
  */
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class DailyOrder implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @TableId
+    private static final long serialVersionUID = 2896542904229434598L;
+
     private Long orderId;
 
     private Long orderNo;

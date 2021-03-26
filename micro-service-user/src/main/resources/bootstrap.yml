@@ -1,6 +1,6 @@
 spring:
   application:
-    name: microservice-gateway
+    name: microservice-user
   cloud:
     nacos:
       discovery:

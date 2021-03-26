@@ -1,24 +1,15 @@
 package cn.x.microservice.order.entity;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.io.Serializable;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-/**
- * <p>
- * 
- * </p>
- *
- * @author x
- * @since 2021-03-05
- */
+import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+
 @Data
-@EqualsAndHashCode(callSuper = false)
 public class ActivityOrder implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = -7710882384102828935L;
 
     private Long orderId;
 
@@ -40,9 +31,8 @@ public class ActivityOrder implements Serializable {
 
     private Integer activityId;
 
-    private LocalDateTime cTime;
+    private Date cTime;
 
-    private LocalDateTime mTime;
-
+    private Date mTime;
 
 }

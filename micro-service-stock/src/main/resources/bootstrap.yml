@@ -3,6 +3,8 @@ spring:
     name: microservice-stock
   cloud:
     nacos:
+      discovery:
+        namespace: b8a92bda-8d25-4ab9-834a-3700e47f8c57
       username: admin
       password: admin
       config:
