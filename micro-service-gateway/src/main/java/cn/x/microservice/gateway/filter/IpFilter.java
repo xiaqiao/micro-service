@@ -19,7 +19,7 @@ import java.net.InetSocketAddress;
  * @since 2021/2/26
  */
 @Component
-@Order(1)
+@Order(0)
 @Slf4j
 public class IpFilter implements GlobalFilter {
 
