@@ -1,7 +1,5 @@
 package cn.x.microservice.common.util;
 
-import org.springframework.context.annotation.Bean;
-
 import java.util.Arrays;
 
 /**
@@ -9,24 +7,6 @@ import java.util.Arrays;
  * @since 2021/6/29
  */
 public class SortUtil {
-
-    public static void main(String[] args) {
-        int size = 5;
-        double[] arr = new double[size];
-        for (int i = 0; i < size; i++) {
-            double random = Math.random();
-            arr[i] = random;
-        }
-        arr[0] = 3;
-        arr[1] = 1;
-        arr[2] = 5;
-        arr[3] = 4;
-        arr[4] = 2;
-//        bubbleSort(arr);
-//        selectSort(arr);
-//        shellSort(arr);
-        quickSort(arr, 0, arr.length - 1);
-    }
 
     public static void bubbleSort(double[] arr) {
         if (arr == null || arr.length == 0) {
@@ -146,6 +126,12 @@ public class SortUtil {
             //递归处理基准数右边数据
             quickSort(arr, l + 1, right);
         }
+    }
+
+    private static void swap(double[] arr, int i, int j) {
+        double temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
 }
