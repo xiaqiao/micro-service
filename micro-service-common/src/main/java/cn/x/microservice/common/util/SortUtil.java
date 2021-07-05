@@ -148,10 +148,4 @@ public class SortUtil {
         }
     }
 
-    private static void swap(double[] arr, int i, int j) {
-        double temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
 }
