@@ -4,7 +4,6 @@ package cn.x.microservice.order.controller;
 import cn.x.microservice.common.bean.ResponseResult;
 import cn.x.microservice.order.config.RabbitMqConfig;
 import cn.x.microservice.order.entity.DailyOrder;
-import cn.x.microservice.order.mq.callback.OrderConfirmCallback;
 import cn.x.microservice.order.service.DailyOrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
@@ -25,8 +24,6 @@ public class DailyOrderController {
     private DailyOrderService dailyOrderService;
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    @Autowired
-    private OrderConfirmCallback orderConfirmCallback;
 
     @GetMapping("/user")
     public ResponseResult getUserOrderList(Long userId, Integer page, Integer rows) {
